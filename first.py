@@ -1,4 +1,5 @@
-x = 11
-y = 22
+def foo(my):
+    my_new = [float(ll) for ll in my]
+    return (sum(my_new))
 
-print("xx=", x, "yy=", y)
+print(foo(["1.2", "1.3"]))
