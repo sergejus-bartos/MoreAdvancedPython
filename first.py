@@ -1,22 +1,17 @@
+import pandas
+import os
 
-from tkinter import W
+my_path = "C:/Users/serge/projects/MoreAdvancedPython/"
+my_file = "data.csv"
+the_file = my_path + my_file
 
-
-
-my_path1 = "C:/Users/serge/projects/MoreAdvancedPython/test1.txt"
-my_path2 = "C:/Users/serge/projects/MoreAdvancedPython/test2.txt"
-
-with open(my_path1, "r") as my_file1:
-    content = my_file1.read()
+if os.path.exists(the_file):
+    data = pandas.read_csv(the_file)
+    print(data.mean()["st1"])
+else:
+    print("no file")
     
-with open(my_path2, "a+") as my_file2:
-     my_file2.write(content)
-     my_file2.seek(0)
-     my_file2.write(content)
-     my_file2.seek(0)
-     my_file2.write(content)
-
-    
+print(data)
 
 
 
